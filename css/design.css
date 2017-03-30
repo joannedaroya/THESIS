@@ -1,7 +1,9 @@
 
 /*======Main Page=====*/
 /*head*/
-
+body{
+  margin-top:150px;
+}
 #header{
    background:#014fb3;
    width: 100%;
@@ -18,7 +20,7 @@
    float:left;
    width:70px;
    height: 70px;
-   background:url('../image/small_logo.png');
+   background:url('../image/nav_logo.png');
 }
 nav{
 	float: right;
