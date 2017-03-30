@@ -1,7 +1,9 @@
 
 /*======Main Page=====*/
 /*head*/
-
+body{
+  margin-top:150px;
+}
 #header{
    background:#014fb3;
    width: 100%;
@@ -50,20 +52,17 @@ nav ul li a{
 }
 
 #menu ul li {
-        display: inline-block;
+  display: inline-block;
 	float: left;
 	padding: 5px;
     }
 
   #menu ul li a{
-	  font-family: 'Aref Ruqaa', serif;
+	  font-family: 'Roboto', sans-serif;
 	  font-weight: bold;
     color:white;
   }
 
-  #searchbar{
-    float:right;
-  }
 
   input[type=text] {
       width: 120px;
@@ -81,7 +80,11 @@ nav ul li a{
   }
 
   input[type=text]:focus {
-      width: 100%;
+      width: 70%;
+  }
+
+  #serbar{
+          float:right;
   }
 
 #menu-icon {
