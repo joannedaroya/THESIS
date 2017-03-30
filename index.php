@@ -36,8 +36,8 @@
                     <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                     <li><a <href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
                   <?php } else { ?>
-                    <li><a href="login.html">REGISTER</a></li>
-                    <li><a href="login.html">LOGIN</a></li>
+            <!--         <li><a href="login.html">REGISTER</a></li>
+                    <li><a href="login.html">LOGIN</a></li> -->
                   <?php } ?>
                 </ul>
             </nav>
@@ -47,7 +47,11 @@
               <!--   <li><a href="inindex.html">LATEST</a></li>
                 <li><a href="inindex.html">CLOTHES</a></li> -->
                 <li><a href="inindex.html">iACADEMY MERCH</a></li>
+                <li><button type="button" class="btn btn-default btn-xs">Start Business</button><li>
+
               <!--  <li><a href="inindex.html">CUSTOMIZE</a></li> -->
+                <li><a href="login.html">REGISTER</a></li>
+                <li><a href="login.html">LOGIN</a></li>
                 <li style="float:right"><input type="text" name="search" placeholder=""></li>
             </ul>
       </div>
