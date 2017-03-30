@@ -1,7 +1,9 @@
 
 /*======Main Page=====*/
 /*head*/
-
+body{
+  margin-top:150px;
+}
 #header{
    background:#014fb3;
    width: 100%;
@@ -17,6 +19,7 @@
    float:left;
    width:70px;
    height: 70px;
+   background:url('../image/nav_logo.png');
 }
 nav{
 	float: right;
@@ -56,7 +59,7 @@ nav ul li a{
     }
 
   #menu ul li a{
-	  font-family: 'Aref Ruqaa', serif;
+	  font-family: 'Roboto', sans-serif;
 	  font-weight: bold;
     color:white;
   }
@@ -140,4 +143,3 @@ footer.second {
 	text-align: center;
 	opacity: 0.8;
 }
-/*===========================*/
