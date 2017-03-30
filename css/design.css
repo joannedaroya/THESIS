@@ -1,9 +1,7 @@
 
 /*======Main Page=====*/
 /*head*/
-body{
-  margin-top:150px;
-}
+
 #header{
    background:#014fb3;
    width: 100%;
@@ -12,7 +10,6 @@ body{
    top: 0;
    left: 0;
    z-index:100;
-   opacity: 0.9;
    padding-top:10px;
 }
 
@@ -20,7 +17,6 @@ body{
    float:left;
    width:70px;
    height: 70px;
-   background:url('../image/nav_logo.png');
 }
 nav{
 	float: right;
@@ -60,7 +56,7 @@ nav ul li a{
     }
 
   #menu ul li a{
-	  font-family: 'Roboto', sans-serif;
+	  font-family: 'Aref Ruqaa', serif;
 	  font-weight: bold;
     color:white;
   }
