@@ -1,6 +1,9 @@
 
 /*======Main Page=====*/
 
+body {
+  background-color: green;
+}
 
 footer{
 	background: #333333;
