@@ -46,8 +46,8 @@
                 <li><a href="inindex.html">CLOTHES</a></li>
                 <li><a href="inindex.html">iACADEMY MERCH</a></li>
                 <li><a href="inindex.html">CUSTOMIZE</a></li>
+                <li style="float:right"><input type="text" name="search" placeholder="Search.."></li>
             </ul>
-            -------searchbar-----------
       </div>
     </div>
 
