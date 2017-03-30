@@ -33,7 +33,7 @@
                     <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ACCOUNT</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                     <li><a <href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
-                  <?php }else { ?>
+                  <?php } else { ?>
                     <li><a href="#">REGISTER</a></li>
                     <li><a href="#">LOGIN</a></li>
                   <?php } ?>
