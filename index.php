@@ -95,10 +95,10 @@
 		<section>
 			<h3>Connect With Us !</h3>
 			<ul class="social">
-				<li><a href="https://www.facebook.com/jungiscorny"><img src="images/facebook.png"></a></li>
-				<li><a href="https://www.instagram.com/corny_jung/"><img src="images/instagram.png"></a></li>
-				<li><a href="http://www.kakao.com/talk"><img src="images/kakao.png"></a></li>
-				<li><a href="https://line.me/ko/"><img src="images/line.png"></a></li>
+				<li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
+				<li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
+        <li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
+        <li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
 			</ul>
 		</section>
 		<section>
