@@ -23,15 +23,20 @@
 
   <div class="row">
     <div class="col-md-12 text-right" id="header">
-      <a href="index.html" id="logo"></a>
+      <a href="index.php"><img src="image/logo.png" id="logo"></a>
             <nav>
                 <a href="#" id="menu-icon"></a>
                 <ul>
+                  <?php if(isset($_SESSION['email'])){ ?>
                     <li><a href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ACCOUNT</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                     <li><a <href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
+                  <?php }else { ?>
+                    <li><a href="#">REGISTER</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                  <?php } ?>
                 </ul>
             </nav>
 
@@ -39,11 +44,10 @@
             <ul>
                 <li><a href="inindex.html">LATEST</a></li>
                 <li><a href="inindex.html">CLOTHES</a></li>
-                <li><a href="inindex.html">MERCH</a></li>
+                <li><a href="inindex.html">iACADEMY MERCH</a></li>
                 <li><a href="inindex.html">CUSTOMIZE</a></li>
-                <li><a href="inindex.html">TINDER</a></li>
             </ul>
-
+            -------searchbar-----------
       </div>
     </div>
 
@@ -98,7 +102,7 @@
 			</ul>
 		</section>
 		<section>
-			<img src="image/iacadamitlogo.png"  width="100" height="100"/>
+			<img src="image/logo1.png"  width="100" height="100"/>
 		</section>
 	</footer>
 
