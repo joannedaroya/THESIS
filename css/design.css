@@ -73,10 +73,10 @@ nav ul li a{
       border-radius: 2px;
       font-size: 16px;
       background-color: white;
-      background-image: url('searchicon.png');
-      background-position: 10px 10px;
+      background-image: url('../image/searchicon.png');
+      background-position: 10px 0px;
       background-repeat: no-repeat;
-      padding: 15px 20px 10px 40px;
+      padding: 0px 0px 0px 40px;
       transition: width 0.4s ease-in-out;
   }
 
