@@ -36,7 +36,8 @@ nav ul li{
 	}
 
 nav ul li a{
-
+  font-family: 'Roboto', sans-serif;
+  color:white;
 }
 
 #menu{

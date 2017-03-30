@@ -34,8 +34,8 @@
                     <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                     <li><a <href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
                   <?php } else { ?>
-                    <li><a href="#">REGISTER</a></li>
-                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="login.html">REGISTER</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
                   <?php } ?>
                 </ul>
             </nav>
