@@ -13,6 +13,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
 <!--CSS-->
 <link rel="stylesheet" href="css/design.css"/>
 </head>
@@ -40,13 +42,13 @@
                 </ul>
             </nav>
 
-      <div class="col-md-12" id="menu">
-            <ul>
-                <li><a href="inindex.html">LATEST</a></li>
-                <li><a href="inindex.html">CLOTHES</a></li>
+      <div class="col-md-12 col-xs-12" id="menu">
+            <ul id="augh1">
+              <!--   <li><a href="inindex.html">LATEST</a></li>
+                <li><a href="inindex.html">CLOTHES</a></li> -->
                 <li><a href="inindex.html">iACADEMY MERCH</a></li>
-                <li><a href="inindex.html">CUSTOMIZE</a></li>
-                <li style="float:right"><input type="text" name="search" placeholder="Search.."></li>
+              <!--  <li><a href="inindex.html">CUSTOMIZE</a></li> -->
+                <li style="float:right"><input type="text" name="search" placeholder=""></li>
             </ul>
       </div>
     </div>
