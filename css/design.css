@@ -61,7 +61,7 @@ nav ul li{
   }
 
 
-  input[type=search] {
+  input[name=search] {
       width: 120px;
   	  height: 20px;
       box-sizing: border-box;
@@ -76,10 +76,18 @@ nav ul li{
       transition: width 0.4s ease-in-out;
   }
 
-  input[type=search]:focus {
+  input[name=search]:focus {
       width: 100%;
   }
 
+  input {
+    width: 100%;
+  }
+
+  #contact {
+    margin-top: 70px;
+    text-align: center;
+  }
 
 #menu-icon {
 	display: none;
