@@ -31,9 +31,8 @@
   <br><br><br>
 
   <div class="row">
-      <h2> Hi! Let's Get Started  </h2>
       <hr>
-      <br>
+
          <div class="col-md-5 col-xs-0">
 
          <pre>
