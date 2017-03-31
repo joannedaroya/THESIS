@@ -13,6 +13,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
 <!--CSS-->
 <link rel="stylesheet" href="css/design.css"/>
 </head>
@@ -33,21 +35,25 @@
                     <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ACCOUNT</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                     <li><a <href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
-                  <?php }else { ?>
-                    <li><a href="#">REGISTER</a></li>
-                    <li><a href="#">LOGIN</a></li>
+                  <?php } else { ?>
+            <!--         <li><a href="login.html">REGISTER</a></li>
+                    <li><a href="login.html">LOGIN</a></li> -->
                   <?php } ?>
                 </ul>
             </nav>
 
-      <div class="col-md-12" id="menu">
-            <ul>
-                <li><a href="inindex.html">LATEST</a></li>
-                <li><a href="inindex.html">CLOTHES</a></li>
+      <div class="col-md-12 col-xs-12" id="menu">
+            <ul id="augh1">
+              <!--   <li><a href="inindex.html">LATEST</a></li>
+                <li><a href="inindex.html">CLOTHES</a></li> -->
                 <li><a href="inindex.html">iACADEMY MERCH</a></li>
-                <li><a href="inindex.html">CUSTOMIZE</a></li>
+                <li><button type="button" class="btn btn-default btn-xs">Start Business</button><li>
+
+              <!--  <li><a href="inindex.html">CUSTOMIZE</a></li> -->
+                <li><a href="login.html">REGISTER</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li style="float:right"><input type="text" name="search" placeholder=""></li>
             </ul>
-            -------searchbar-----------
       </div>
     </div>
 
@@ -95,10 +101,10 @@
 		<section>
 			<h3>Connect With Us !</h3>
 			<ul class="social">
-				<li><a href="https://www.facebook.com/jungiscorny"><img src="images/facebook.png"></a></li>
-				<li><a href="https://www.instagram.com/corny_jung/"><img src="images/instagram.png"></a></li>
-				<li><a href="http://www.kakao.com/talk"><img src="images/kakao.png"></a></li>
-				<li><a href="https://line.me/ko/"><img src="images/line.png"></a></li>
+				<li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
+				<li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
+        <li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
+        <li><a href="https://www.facebook.com/jungiscorny"><img src="image/social/facebook.png"></a></li>
 			</ul>
 		</section>
 		<section>
