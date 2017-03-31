@@ -158,6 +158,13 @@ a:hover#menu-icon{
     margin-bottom: 7px;
     padding-bottom: 7px;
 	width:95%;
+
+  ul.social li img{
+  	height:50px;
+  	border-radius: 50%;
+  	transform: rotate(15deg) scale(1);
+  	transition: .3s ease-in-out;
+
 }
 
 
