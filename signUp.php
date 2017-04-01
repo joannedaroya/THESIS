@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>:::iMARKET:::</title>
+    <title>Sign Up!</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
@@ -13,8 +13,8 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <!--CSS-->
+
+
     <link rel="stylesheet" href="css/design.css" />
 </head>
 
@@ -22,70 +22,94 @@
 
     <div class="container-fluid">
 
+        <div class="row">
+            <div class="col-md-12 text-right">
+                icon logo / navigation icons in right div here
+            </div>
+            <div class="col-md-12">
+                2nd navigation links with search bar div here
+            </div>
+        </div>
+
+        <br><br><br>
 
         <div class="row">
-            <div class="col-md-12 text-right" id="header">
-                <a href="index.php"><img src="image/logo.png" id="logo"></a>
-                <nav>
-                    <a href="#" id="menu-icon"></a>
-                    <ul>
-                        <?php if(isset($_SESSION['email'])){ ?>
-                        <li><a href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ACCOUNT</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
-                        <li><a <href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
-                        <?php }else { ?>
-                        <li><a href="#">REGISTER</a></li>
-                        <li><a href="#">LOGIN</a></li>
-                        <?php } ?>
-                    </ul>
-                </nav>
+            <h2> Hi! Let's Get Started  </h2>
+            <hr>
+            <br>
+            <div class="col-md-5 col-xs-0">
 
-                <div class="col-md-12" id="menu">
-                    <ul>
-                        <li><a href="inindex.html">LATEST</a></li>
-                        <li><a href="inindex.html">CLOTHES</a></li>
-                        <li><a href="inindex.html">iACADEMY MERCH</a></li>
-                        <li><a href="inindex.html">CUSTOMIZE</a></li>
-                        <li style="float:right"><input type="text" name="search" placeholder="search.."></li>
-                    </ul>
+                <pre>
+           Welcome to the own iACADEMY MARKET SHIT
 
+           Exclusive for iacadamit fam only k.
+
+           Why sign up?
+
+           Sell as many items for free! Absolutely no fees.
+           Chat with sellers to buy stuff you love!
+           Get social! Interact with the community and a whole lot more!
+        </pre>
+
+            </div>
+            <div class="col-md-5 col-xs-12">
+
+                <h4> It’s free and always will be.</h4>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <span class="form-group-addon"><i class="glyphicon glyphicon-user"></i></span> &nbsp&nbsp
+                        <input type="text" class="form-control" placeholder="Enter First Name" name="firstname">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Last Name" name="lastname">
+                    </div>
+                </form>
+
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="pw" placeholder="New Password" required>
+                    <small id="passHelp" class="form-text text-muted">Double check your password please.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="bday">Date of Birth </label> <br>
+                    <input type="date" name="bday" required>
+                    <small id="ageHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
+                </div>
+
+
+                <h4>Oh! One more thing </h4>
+                <small id="Help" class="form-text text-muted">Are you a:</small> <br>
+
+                <label class="radio"><input type="radio" name="optradio">Student</label>
+                <label class="radio"><input type="radio" name="optradio">Employee</label>
+                <br><br>
+
+                <div class="form-group">
+                    <div>
+                        <button class="btn btn-success btn-lg" name="submit" type="submit">
+      Sign Up!
+     </button>
+                        <button type="reset" class="btn btn-default btn-lg">Clear</button>
+                    </div>
+                </div>
+
+                </form>
+
             </div>
 
         </div>
-
-        <div class="jumbotron text-center">
-            <h1>Slider here in this part</h1>
-            <p>augh fck</p>
-            <br><br><br>
-        </div>
-        <div class="col-md-12 text-center">
-            <br><br> school pride part div here
-            <br><br><br><br><br><br><br>
-        </div>
-        <div class="col-md-12 text-center">
-            about us part div here
-            <br><br><br><br><br><br><br>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <h3>Column 1</h3> name / email address / message part here
-                <br><br><br><br><br><br><br>
-
-            </div>
-            <div class="col-md-6 text-center">
-                <h3>Column 2</h3> school address shit with the map extension div here
-                <br><br><br><br><br><br><br>
-
-            </div>
-
-        </div>
-
-
     </div>
+
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+
     <footer class="footer1">
         <div class="container">
 
@@ -191,13 +215,11 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="design">
                         <a href="#">iMARKET </a> | <a target="_blank" href="#">Web Design & Development by iACADAMIT</a>
-                        <br>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
 
 </body>
 
