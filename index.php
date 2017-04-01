@@ -137,7 +137,7 @@
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Test Centres</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  Admission Form</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  Announcement System</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live Test</a></li>
 
                             </ul>
