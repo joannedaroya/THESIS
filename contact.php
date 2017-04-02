@@ -20,41 +20,101 @@
 
 <body>
 
+  <nav id="navbar-main">
+  	<div class="container">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			</button>
+  		</div>
+  			<div class="collapse navbar-collapse row" id="myNavbar">
+  			<ul class="pull-right">
+  				<?php if(isset($_SESSION['email'])){ ?>
+                  <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+                  <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
+                  <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
+                  <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
+
+                  <li class="upper-links dropdown"><a class="links">My Account</a>
+                      <ul class="dropdown-menu">
+                          <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
+                          <li class="profile-li"><a class="profile-links" href="#">Account Setting</a></li>
+                          <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
+                          <li class="profile-li"><a class="profile-links" href="#">logout</a></li>
+                  <?php }else { ?>
+                      <li class="upper-links dropdown"><a class="links">My Account</a>
+                      <ul class="dropdown-menu">
+                          <li class="profile-li"><a class="profile-links" href="login.php">LOGIN</a></li>
+                          <li class="profile-li"><a class="profile-links" href="signUp.php">REGISTER</a></li>
+                    <?php } ?>
+
+
+                      </ul>
+                  </li>
+              </ul>
+  			</ul>
+          </div>
+  		</div>
+
+
+
+  <div class="row">
+      <!--Size-->
+  			<div class="col-sm-1">
+              </div>
+  		<!--Size-->
+              <div class="col-sm-1">
+  			           <a href="index.php"><img src="image/logo.png" width="70px" height="70px"></a>
+              </div>
+              <div class="smallsearch col-sm-8 col-xs-11">
+                  <div class="row">
+                      <input class="navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
+                      <button class="navbar-button col-xs-1">
+                          <svg width="15px" height="15px">
+                              <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+
+          </div>
+
+
+  		<div class="container">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mySecondbar">
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			</button>
+  		</div>
+      <!--Size-->
+  			<div class="col-sm-2">
+  			<div class="col-sm-8 col-xs-11">
+              </div></div>
+  		<!--Size-->
+  			<div class="collapse navbar-collapse row" id="mySecondbar">
+  			<ul class="nav navbar-nav fontnav">
+  						<li><a href="#">BEST</a></li>
+                          <li><a href="#">MAN</a></li>
+                          <li><a href="#">WOMAN</a></li>
+                          <li><a href="#">iACADEMY MERCHANDISE</a></li>
+                          <li><a href="#">SHOES</a></li>
+  						<li><a href="#">ETC</a></li>
+                      </ul>
+                  </li>
+              </ul>
+  			</ul>
+          </div>
+  		</div>
+  </nav>
+
     <div class="container-fluid">
 
 
-        <div class="row">
-            <div class="col-md-12 text-right" id="header">
-                <a href="index.php"><img src="image/logo.png" id="logo"></a>
-                <nav>
-                    <a href="#" id="menu-icon"></a>
-                    <ul>
-                        <?php if(isset($_SESSION['email'])){ ?>
-                        <li><a href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> ACCOUNT</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
-                        <li><a <href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
-                        <?php }else { ?>
-                        <li><a href="#">REGISTER</a></li>
-                        <li><a href="#">LOGIN</a></li>
-                        <?php } ?>
-                    </ul>
-                </nav>
 
-                <div class="col-md-12" id="menu">
-                    <ul>
-                        <li><a href="inindex.html">LATEST</a></li>
-                        <li><a href="inindex.html">CLOTHES</a></li>
-                        <li><a href="inindex.html">iACADEMY MERCH</a></li>
-                        <li><a href="inindex.html">CUSTOMIZE</a></li>
-                        <li style="float:right"><input type="text" name="search" placeholder="search.."></li>
-                    </ul>
-
-                </div>
-            </div>
-
-        </div>
 
         <div class="container">
             <div class="row">
@@ -79,7 +139,7 @@
                 </div>
 
                 <div class="col-md-7" id="contact">
-                    <p>324 Se. Gil Puyat Avenue<br/>Bel-air, Makati City</p>
+                    <p style="margin-top:20px;">324 Se. Gil Puyat Avenue<br/>Bel-air, Makati City</p>
                     <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>: 09167737988<br/>
                     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>: <a href="#">sample@inquiry.com</a><br/><br/>
                     <iframe width="80%" height="270px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1930.8306954511957!2d121.01845665817463!3d14.561345997456918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDMzJzQwLjkiTiAxMjHCsDAxJzEwLjQiRQ!5e0!3m2!1sen!2sph!4v1481111170468"></iframe>
@@ -104,7 +164,7 @@
                             <h1 class="title-widget">About iMARKET</h1>
 
                             <ul>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
+                                <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
@@ -203,7 +263,7 @@
             </div>
         </div>
     </div>
-  </br>                 
+
 
 </body>
 

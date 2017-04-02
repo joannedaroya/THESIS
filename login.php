@@ -47,7 +47,7 @@
                   <?php }else { ?>
                       <li class="upper-links dropdown"><a class="links">My Account</a>
                       <ul class="dropdown-menu">
-                          <li class="profile-li"><a class="profile-links" href="login.html">LOGIN</a></li>
+                          <li class="profile-li"><a class="profile-links" href="login.php">LOGIN</a></li>
                           <li class="profile-li"><a class="profile-links" href="signUp.php">REGISTER</a></li>
                     <?php } ?>
 
@@ -285,7 +285,7 @@
                 </div>
             </div>
         </div>
-        
+
 
 
 </body>
