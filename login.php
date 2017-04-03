@@ -21,6 +21,12 @@
 
 <body>
 
+  <?php
+        session_start();
+        require_once('connector.php');
+    ?>
+
+
   <nav id="navbar-main">
   	<div class="container">
   		<div class="navbar-header">
@@ -120,7 +126,7 @@
   </div>
 <div class="row">
    <div class="col-md-6 ">
-     <div class="form" id="form1">
+     <form class="form" id="form1"  method="post" action="loginProcess.php">
        <br>
 
           <div class="form-group">
@@ -129,11 +135,14 @@
           </div>
           <div class="form-group">
                <label for="exampleInputEmail1">Input Password</label>
-               <input type="password" class="form-control input-lg" placeholder="Password" name="pw">
+               <input type="password" class="form-control input-lg" placeholder="Password" name="password">
           </div>
           <div class="form-group">
               <input type="password" class="form-control input-lg" placeholder="Confirm Password">
           </div>
+
+          <label class="radio"><input type="radio" name="userType" id="userType" value="student">Student</label>
+          <label class="radio"><input type="radio" name="userType" id="userType" value="employee">Employee</label>
 
           <div class="form-group">
            <div>
@@ -144,7 +153,7 @@
             <span><a href="#">Need help?</a></span>
            </div>
      </div>
-   </div>
+   </form>
 
 
   </div>
