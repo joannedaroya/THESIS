@@ -158,6 +158,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="bday">Contact Number </label> <br>
+                    <input type="text" name="contactNumber" placeholder="Contact Number" required>
+                    <small id="contactHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
+                </div>
+
+                <div class="form-group">
                     <label for="bday">Date of Birth </label> <br>
                     <input type="date" name="bday" required>
                     <small id="ageHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
