@@ -20,6 +20,14 @@
 
 <body>
 
+  <?php
+        session_start();
+        require_once('connector.php');
+    ?>
+
+
+
+
   <nav id="navbar-main">
   	<div class="container">
   		<div class="navbar-header">
@@ -137,29 +145,33 @@
             <div class="col-md-5 col-xs-12">
 
                 <h4> It’s free and always will be.</h4>
-                <form class="form-inline">
-                    <div class="form-group">
+                <form  method="post" action="registerProcess.php">
+                    <div class="form-group form-inline">
                         <span class="form-group-addon"><i class="glyphicon glyphicon-user"></i></span> &nbsp&nbsp
-                        <input type="text" class="form-control" placeholder="Enter First Name" name="firstname">
+                        <input type="text" class="form-control" placeholder="Enter First Name" name="firstName">
+
+                        <input type="text" class="form-control" placeholder="Enter Last Name" name="lastName">
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter Last Name" name="lastname">
-                    </div>
-                </form>
 
                 <div class="form-group">
                     <label for="inputEmail">Email address</label>
-                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" placeholder="Enter email" name="newemail">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="pw" placeholder="New Password" required>
+                    <input type="password" class="form-control" name="newpassword" placeholder="New Password" required>
                     <small id="passHelp" class="form-text text-muted">Double check your password please.</small>
                 </div>
 
                 <div class="form-group">
+                    <label for="bday">Contact Number </label> <br>
+                    <input type="text" name="contactNum" placeholder="Contact Number" required>
+                    <small id="contactHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
+                </div>
+
+                <div class="form-group">
                     <label for="bday">Date of Birth </label> <br>
-                    <input type="date" name="bday" required>
+                    <input type="date" name="birthDay" required>
                     <small id="ageHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
                 </div>
 
@@ -167,8 +179,8 @@
                 <h4>Oh! One more thing </h4>
                 <small id="Help" class="form-text text-muted">Are you a:</small> <br>
 
-                <label class="radio"><input type="radio" name="optradio">Student</label>
-                <label class="radio"><input type="radio" name="optradio">Employee</label>
+                <label class="radio"><input type="radio" name="userType" id="userType" value="student">Student</label>
+                <label class="radio"><input type="radio" name="userType" id="userType" value="employee">Employee</label>
                 <br><br>
 
                 <div class="form-group">
