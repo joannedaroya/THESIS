@@ -148,6 +148,7 @@
             </button>
             <button type="reset" class="btn btn-default">Clear</button> <br/><br/>
             <span><a href="forgotPassword.php">Forgot password?</a></span>
+
            </div>
      </div>
    </form>
@@ -168,9 +169,12 @@
             </form>
 
         </div>
-    </div><br/>
+<br/>
     <hr/><br/>
+</div>
     </div>
+
+
 
     <!--Footer-->
         <footer class="footer1">
