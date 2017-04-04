@@ -116,7 +116,74 @@
 </nav>
 
 	<!--First-->
+  <?php
+    $email = $_SESSION['email'];
+    $query = $dbconn->query("SELECT * FROM users WHERE email='$email'");
+    if($query->num_rows > 0){
+      while($row = $query->fetch_assoc()) {
+  ?>
+  <div class="container">
+    <h2>My profile</h2><br/>
+  <div class="rows">
+    <div class="col-md-3">
+      <table border="2px" style="width:100%;">
+        <thead><tr><th><h4><?php echo $row['firstName']." ". $row['lastName']; ?></h4></th></tr></thead>
+        <tbody>
+          <tr><td><a href="accountSetting.php">My Account</a></td></tr>
+          <tr><td><a href="#">My Purchases</a></td></tr>
+          <tr><td><a href="#">My Products</a></td></tr>
+          <tr><td><a href="#">My Sales</a></td></tr>
+        </tbody>
+      </table>
+    </div>
 
+    <div class="col-md-7">
+      <form name="personalInfo" method="post">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <div class="control-group form-group">
+            <div class="controls">
+              <input type="email" class="form-control" name="email" id="email" readonly value=<?php echo $email ?>>
+            </div>
+          </div>
+          <div class="row">
+            <div class="control-group form-group col-lg-6">
+              <div class="controls">
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder=<?php echo $row['firstName'] ?>>
+              </div>
+            </div>
+            <div class="control-group form-group col-lg-6">
+              <div class="controls">
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder=<?php echo $row['lastName'] ?>>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="control-group form-group col-lg-6">
+              <div class="controls">
+                <label>Contact Number</label>
+                <input type="text" class="form-control" name="contactNum" id="contactNum" placeholder=<?php echo $row['contactNum'] ?>>
+              </div>
+            </div>
+            <div class="control-group form-group col-lg-6">
+              <div class="controls">
+                <label>Birthdate</label>
+                <input type="date" class="form-control" name="birthdate" id="birthdate">
+              </div>
+            </div>
+          </div>
+          <input type="submit" value="Update"> &nbsp;&nbsp;&nbsp;
+          <input type="reset" value="Clear">
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+  </div>
+  <?php
+      }
+    }
+  ?>
 
 
 
