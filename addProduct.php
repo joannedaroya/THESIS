@@ -61,9 +61,9 @@ if(!$_SESSION['email']){
                     <li class="upper-links dropdown"><a class="links">My Account</a>
                         <ul class="dropdown-menu">
                             <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
-                            <li class="profile-li"><a class="profile-links" href="#">Account Setting</a></li>
+                            <li class="profile-li"><a class="profile-links" href="accountSetting.php">Account Setting</a></li>
                             <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
-                            <li class="profile-li"><a class="profile-links" href="#">logout</a></li>
+                            <li class="profile-li"><a class="profile-links" href="logout.php">logout</a></li>
                             <?php }else { ?>
                             <li class="upper-links dropdown"><a class="links">My Account</a>
                                 <ul class="dropdown-menu">
@@ -137,7 +137,7 @@ if(!$_SESSION['email']){
       <div class="row">
         <div class="col-md-12 col-centered formProduct1">
             <div class="row">
-                <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2> 
+                <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2>
                 <!-- just testing will going to recode -->
                 <hr>
             </div>
@@ -161,7 +161,7 @@ if(!$_SESSION['email']){
                        <option value="Hobbies, Sports">Hobbies, Sports</option>
                        <option value="Toys Stuffs">Toys Stuffs</option>
                     </select>
-                </div>   
+                </div>
 
 
                 </div>
@@ -179,7 +179,7 @@ if(!$_SESSION['email']){
                 </div>
             <!--    <div class="form-group">
                     <label for="inputname">Upload Your Product Image:</label>
-                   
+
                 </div>  need to put code to upload pictures here lol -->
                 <div class="form-group" >
                     <label>product image</label>
@@ -199,7 +199,7 @@ if(!$_SESSION['email']){
                 </div>
 
                 </form>
-  
+
                 <hr>
 
             </div>
@@ -219,7 +219,7 @@ if(!$_SESSION['email']){
                                 <ul>
                                     <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
                                     <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                                    <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
                                 </ul>
 

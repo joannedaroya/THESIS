@@ -37,9 +37,9 @@
                   <li class="upper-links dropdown"><a class="links">My Account</a>
                       <ul class="dropdown-menu">
                           <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
-                          <li class="profile-li"><a class="profile-links" href="#">Account Setting</a></li>
+                          <li class="profile-li"><a class="profile-links" href="accountSetting.php">Account Setting</a></li>
                           <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
-                          <li class="profile-li"><a class="profile-links" href="#">logout</a></li>
+                          <li class="profile-li"><a class="profile-links" href="logout.php">logout</a></li>
                   <?php }else { ?>
                       <li class="upper-links dropdown"><a class="links">My Account</a>
                       <ul class="dropdown-menu">
@@ -162,8 +162,8 @@
 
                             <ul>
                                 <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                                <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+                                <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
                             </ul>
 
