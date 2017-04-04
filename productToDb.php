@@ -30,7 +30,7 @@ if ($conn->connect_error) {
   $powner = $_POST['ownerEmail'];
   //$pcategory = $_POST['category'];
 
-  $pcategory = $_GET['category'];
+  $pcategory = $_POST['category'];
 
   //pricepart dont touch
   $pprice = $_POST['price'];
@@ -58,10 +58,10 @@ if ($conn->connect_error) {
     }
 
   if(@mysqli_query($conn, $query)){
-       echo "<script>location.href='addproductfinish.php';</script>";
+       echo "";
   }else {
     echo mysqli_error($conn);
-           echo "fck di gumagan T_T iyak na";
+           echo "";
   }
 
 
