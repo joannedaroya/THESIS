@@ -116,7 +116,7 @@
 
     <div class="container-fuild">
       <div class="row">
-        <div class="col-md-12 col-centered formProduct">
+        <div class="col-md-12 col-centered formProduct1">
             <div class="row">
                 <h2>Sell your Item! </h2>
                 <hr>
