@@ -150,7 +150,7 @@
              Log In!
             </button>
             <button type="reset" class="btn btn-default">Clear</button> <br>
-            <span><a href="#">Need help?</a></span>
+            <span><a href="forgotpassword.php">Forgot Password?</a></span>
            </div>
      </div>
    </form>
@@ -170,12 +170,6 @@
             </div>
             </form>
 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            website footer shits here
-            <br><br><br><br>
         </div>
     </div>
     </div>
