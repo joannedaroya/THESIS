@@ -60,6 +60,7 @@ if ($conn->connect_error) {
 	// if everything is ok, try to upload file
 	} else {
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+      
       $stmt = $conn->prepare("INSERT INTO products (productName, owner_email, price, shortDes, productCategory, productImage, QTY, date_created, productStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
       $stmt->bind_param("ssdsssisi", $ptitle, $powner, $pprice, $pdes, $pcategory, $photo, $pqty, $createdate, $pstats);
