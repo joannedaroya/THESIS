@@ -49,6 +49,7 @@ if(!$_SESSION['email']){
   			<span class="icon-bar"></span>
   			<span class="icon-bar"></span>
   			</button>
+<<<<<<< HEAD
                 </div>
                 <div class="collapse navbar-collapse row" id="myNavbar">
                     <ul class="pull-right">
@@ -70,6 +71,29 @@ if(!$_SESSION['email']){
                                         <li class="profile-li"><a class="profile-links" href="login.php">LOGIN</a></li>
                                         <li class="profile-li"><a class="profile-links" href="signUp.php">REGISTER</a></li>
                                         <?php } ?>
+=======
+            </div>
+            <div class="collapse navbar-collapse row" id="myNavbar">
+                <ul class="pull-right">
+                    <?php if(isset($_SESSION['email'])){ ?>
+                    <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+                    <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
+                    <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
+                    <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
+
+                    <li class="upper-links dropdown"><a class="links">My Account</a>
+                        <ul class="dropdown-menu">
+                            <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
+                            <li class="profile-li"><a class="profile-links" href="accountSetting.php">Account Setting</a></li>
+                            <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
+                            <li class="profile-li"><a class="profile-links" href="logout.php">logout</a></li>
+                            <?php }else { ?>
+                            <li class="upper-links dropdown"><a class="links">My Account</a>
+                                <ul class="dropdown-menu">
+                                    <li class="profile-li"><a class="profile-links" href="login.php">LOGIN</a></li>
+                                    <li class="profile-li"><a class="profile-links" href="signUp.php">REGISTER</a></li>
+                                    <?php } ?>
+>>>>>>> refs/remotes/origin/master
 
 
                                     </ul>
@@ -135,6 +159,7 @@ if(!$_SESSION['email']){
 
         <div class="container-fuild">
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-md-12 col-centered formProduct1">
                     <div class="row">
                         <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2>
@@ -151,6 +176,22 @@ if(!$_SESSION['email']){
                             <div class="form-group">
                                 <label for="sel1">Whats your Product Category:</label>
                                 <select class="form-control" name="category" required>
+=======
+                <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2>
+                <!-- just testing will going to recode -->
+                <hr>
+            </div>
+            <div class="row">
+            <form class="form" action="productTODb.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="inputname">What are you selling?</label>
+                    <input type="text" class="form-control" placeholder="Enter product name/title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sel1">Whats your Product Category:</label>
+                    <select class="form-control" name="category" required>
+>>>>>>> refs/remotes/origin/master
                        <option value="" selected disabled>Choose of the following</option>
                        <option value="Mobile Phones Accessories">Mobile Phones Accessories</option>
                        <option value="Clothing and Accessories">Clothing and Accessories</option>
@@ -161,7 +202,11 @@ if(!$_SESSION['email']){
                        <option value="Hobbies, Sports">Hobbies, Sports</option>
                        <option value="Toys Stuffs">Toys Stuffs</option>
                     </select>
+<<<<<<< HEAD
                             </div>
+=======
+                </div>
+>>>>>>> refs/remotes/origin/master
 
 
                     </div>
@@ -198,7 +243,13 @@ if(!$_SESSION['email']){
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     </form>
+=======
+                </form>
+
+                <hr>
+>>>>>>> refs/remotes/origin/master
 
                     <hr>
 
@@ -219,7 +270,7 @@ if(!$_SESSION['email']){
                                 <ul>
                                     <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
                                     <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                                    <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
                                 </ul>
 
