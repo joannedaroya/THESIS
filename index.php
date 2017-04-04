@@ -101,7 +101,7 @@
 		<!--Size-->
 			<div class="collapse navbar-collapse row" id="mySecondbar">
 			<ul class="nav navbar-nav fontnav">
-						<li><a href="#">BEST</a></li>
+						<li><a href="#">LATEST</a></li>
             <li><a href="#">MEN</a></li>
             <li><a href="#">WOMEN</a></li>
             <li><a href="#">iACADEMY MERCHANDISE</a></li>
@@ -181,12 +181,10 @@
                         <li class="widget-container widget_nav_menu">
                             <h1 class="title-widget">CATEGORIES</h1>
                             <ul>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  WOMAN</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  MAN</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  WOMEN</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  MEN</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i>  MERCHANDISE</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i>  CUSTOMIZE</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  SHOES</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i>  BEST</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i>  LATEST</a></li>
 
                             </ul>
