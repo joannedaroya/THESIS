@@ -1,3 +1,22 @@
+<?php
+
+session_start();
+DEFINE ('DB_USER', 'root');
+DEFINE ('DB_PASSWORD', '');
+DEFINE ('DB_HOST', 'localhost');
+DEFINE ('DB_NAME', 'imarketdb');
+
+$dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
+OR die('could not connect to MariaDB'.mysqli_connect_error());
+
+if(!$_SESSION['email']){
+ header("need to be login", 404);
+          exit;}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,29 +137,33 @@
       <div class="row">
         <div class="col-md-12 col-centered formProduct1">
             <div class="row">
-                <h2>Sell your Item! </h2>
+                <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2> 
+                <!-- just testing will going to recode -->
                 <hr>
             </div>
             <div class="row">
-
+            <form class="form" action="productTODb.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="inputname">What are you selling?</label>
                     <input type="text" class="form-control" placeholder="Enter product name/title" name="title" required>
                 </div>
+
                 <div class="form-group">
                     <label for="sel1">Whats your Product Category:</label>
-                    <select class="form-control" id="sel1" name="#" required>
+                    <select class="form-control" name="category" required>
                        <option value="" selected disabled>Choose of the following</option>
-                       <option value="####">Mobile Phones Accessories</option>
-                       <option value="####">Clothing and Accessories</option>
-                       <option value="####">Bags and Accessories</option>
-                       <option value="####">Services</option>
-                       <option value="####">Collectibles</option>
-                       <option value="####">Books & Arts</option>
-                       <option value="####">Hobbies, Sports</option>
-                       <option value="####">Toys Stuffs</option>
-
+                       <option value="Mobile Phones Accessories">Mobile Phones Accessories</option>
+                       <option value="Clothing and Accessories">Clothing and Accessories</option>
+                       <option value="Bags and Accessories">Bags and Accessories</option>
+                       <option value="Services">Services</option>
+                       <option value="Collectibles">Collectibles</option>
+                       <option value="Books & Arts">Books & Arts</option>
+                       <option value="Hobbies, Sports">Hobbies, Sports</option>
+                       <option value="Toys Stuffs">Toys Stuffs</option>
                     </select>
+                </div>   
+
+
                 </div>
                 <div class="form-group">
                     <label for="inputname">Product Price: </label>
@@ -154,12 +177,18 @@
                     <label for="inputname">Product Quantity:</label>
                     <input type="number" class="form-control" name="qty" required>
                 </div>
-                <div class="form-group">
+            <!--    <div class="form-group">
                     <label for="inputname">Upload Your Product Image:</label>
-                  <!-- need to put code to upload pictures here lol -->
+                   
+                </div>  need to put code to upload pictures here lol -->
+                <div class="form-group" >
+                    <label>product image</label>
+                     <input type="file" name="fileToUpload">
+                    <p class="help-block">Example "Recomended Image Size in pixel 400 X 300"</p>
                 </div>
 
-
+                <input type="hidden" name="ownerEmail" value="<?php echo $_SESSION['email']; ?>">
+                <input type="hidden" name="productStats" value=1>
 
 
                 <div class="form-group">
@@ -170,6 +199,7 @@
                 </div>
 
                 </form>
+  
                 <hr>
 
             </div>
@@ -227,8 +257,8 @@
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Test Centres</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Announcement</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Computer Live</a></li>
 
                                 </ul>
                             </li>
