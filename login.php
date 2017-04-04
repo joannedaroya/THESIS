@@ -172,12 +172,9 @@
 
         </div>
     </div>
-<<<<<<< HEAD
-    
-    
-=======
     </div>
->>>>>>> refs/remotes/origin/master
+
+
 
     <!--Footer-->
         <footer class="footer1">
