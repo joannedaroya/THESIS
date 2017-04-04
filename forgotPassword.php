@@ -122,20 +122,16 @@
         <br><br><br><br>
 
         <div class="title" id="title1">
-            <h2>Welcome to iACADAMIT</h2>
+            <h2>Retrieve your password</h2>
   </div>
 <div class="row">
    <div class="col-md-6 ">
-     <form class="form" id="form1"  method="post" action="loginProcess.php">
+     <form class="form" id="form1"  method="post" action="forgotpwProcess.php">
        <br>
 
           <div class="form-group">
                <label for="exampleInputEmail1">Email address</label>
                <input type="email" class="form-control input-lg" placeholder="example: user@gmail.com" name="email">
-          </div>
-          <div class="form-group">
-               <label for="exampleInputEmail1">Input Password</label>
-               <input type="password" class="form-control input-lg" placeholder="Password" name="password">
           </div>
 
           <label class="radio"><input type="radio" name="userType" id="userType" value="student">Student</label>
@@ -144,11 +140,10 @@
           <div class="form-group">
            <div>
             <button class="btn btn-primary" name="submit" type="submit">
-             Log In!
+             Send
             </button>
             <button type="reset" class="btn btn-default">Clear</button> <br/><br/>
-            <span><a href="forgotPassword.php">Forgot password?</a></span>
-
+            <span><a href="login.php">Already have an account? Login Here</a></span>
            </div>
      </div>
    </form>
@@ -169,12 +164,9 @@
             </form>
 
         </div>
-<br/>
+    </div><br/>
     <hr/><br/>
-</div>
     </div>
-
-
 
     <!--Footer-->
         <footer class="footer1">
