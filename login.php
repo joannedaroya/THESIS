@@ -150,7 +150,7 @@
              Log In!
             </button>
             <button type="reset" class="btn btn-default">Clear</button> <br>
-            <span><a href="#">Need help?</a></span>
+            <span><a href="forgotpassword.php">Forgot Password?</a></span>
            </div>
      </div>
    </form>
@@ -172,8 +172,12 @@
 
         </div>
     </div>
+<<<<<<< HEAD
     
     
+=======
+    </div>
+>>>>>>> refs/remotes/origin/master
 
     <!--Footer-->
         <footer class="footer1">

@@ -115,43 +115,32 @@
 </nav>
 
 	<!--First-->
+    <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <h1 class="page-header">My Account</h1>
+              </div>
+          </div>
 
-<div class="jumbotron text-center">
-    <h1>Slider here in this part</h1>
-    <p>with Sell Buy button</p>
-    <br><br><br>
-  </div>
-  <div class="col-md-12 text-center">
-  <br><br>
-    Product list first line
-    <br><br><br><br><br><br><br>
-  </div>
-  <div class="col-md-12 text-center">
-    Product list second line
-    <br><br><br><br><br><br><br>
-  </div>
+          <div class="row">
+              <div class="col-md-8" style="margin-left:10%;">
+                  <form name="personalInfo" id="personalInfo" method="post" action="forgotpwprocess.php">
+                      <fieldset>
+                          <legend>Forgot Password</legend>
+                          <p>A random generated password will be sent to your email address. Use this password to login to your account.</p><br/><br/>
+                          <div class="control-group form-group">
+                              <div class="controls">
+                                  <input type="email" class="form-control" name="email" id="email" required placeholder="Email Address">
+                              </div>
+                          </div><br/>
+                          <input type="submit" value="Send" class="btn btn-primary">
+                      </fieldset>
+                  </form>
+              </div>
 
-  <div class="row">
-    <div class="col-md-6 text-center">
-      <h3>Column 1</h3>
-       Best prod or man prod
-           <br><br><br><br><br><br><br>
-
-    </div>
-    <div class="col-md-6 text-center">
-      <h3>Column 2</h3>
-       woman prod
-           <br><br><br><br><br><br><br>
-
-    </div>
-
-  </div>
-
+          </div>
 
 </div>
-
-
-
 <!--Footer-->
     <footer class="footer1">
         <div class="container">
