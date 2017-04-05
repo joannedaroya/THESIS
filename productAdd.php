@@ -1,31 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <title>Forgot Password</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+session_start();
+DEFINE ('DB_USER', 'root');
+DEFINE ('DB_PASSWORD', '');
+DEFINE ('DB_HOST', 'localhost');
+DEFINE ('DB_NAME', 'imarketdb');
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+$dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
+OR die('could not connect to MariaDB'.mysqli_connect_error());
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+if(!$_SESSION['email']){
+ header("need to be login", 404);
+          exit;}
+?>
 
-    <link rel="stylesheet" href="css/login.css" />
-    <link rel="stylesheet" href="css/design.css" />
 
-</head>
 
-<body>
 
-    <?php
-        session_start();
-        require_once('connector.php');
-    ?>
+    <!DOCTYPE html>
+    <html lang="en">
 
+    <head>
+        <title>Sell your Item</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/login.css" />
+        <link rel="stylesheet" href="css/design.css" />
+        <link rel="stylesheet" href="css/addPages.css" />
+
+    </head>
+
+    <body>
 
         <nav id="navbar-main">
             <div class="container">
@@ -35,27 +49,27 @@
   			<span class="icon-bar"></span>
   			<span class="icon-bar"></span>
   			</button>
-                </div>
-                <div class="collapse navbar-collapse row" id="myNavbar">
-                    <ul class="pull-right">
-                        <?php if(isset($_SESSION['email'])){ ?>
-                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
-                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
-                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
-                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
+      </div>
+      <div class="collapse navbar-collapse row" id="myNavbar">
+          <ul class="pull-right">
+              <?php if(isset($_SESSION['email'])){ ?>
+              <li class="upper-links"><a class="links" href="addProduct.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+              <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
+              <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
+              <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
 
-                        <li class="upper-links dropdown"><a class="links">My Account</a>
-                            <ul class="dropdown-menu">
-                                <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
-                                <li class="profile-li"><a class="profile-links" href="#">Account Setting</a></li>
-                                <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
-                                <li class="profile-li"><a class="profile-links" href="#">logout</a></li>
-                                <?php }else { ?>
-                                <li class="upper-links dropdown"><a class="links">My Account</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="profile-li"><a class="profile-links" href="login.php">LOGIN</a></li>
-                                        <li class="profile-li"><a class="profile-links" href="signUp.php">REGISTER</a></li>
-                                        <?php } ?>
+              <li class="upper-links dropdown"><a class="links">My Account</a>
+                  <ul class="dropdown-menu">
+                      <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
+                      <li class="profile-li"><a class="profile-links" href="#">Account Setting</a></li>
+                      <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
+                      <li class="profile-li"><a class="profile-links" href="#">logout</a></li>
+                      <?php }else { ?>
+                      <li class="upper-links dropdown"><a class="links">My Account</a>
+                          <ul class="dropdown-menu">
+                              <li class="profile-li"><a class="profile-links" href="login.php">LOGIN</a></li>
+                              <li class="profile-li"><a class="profile-links" href="signUp.php">REGISTER</a></li>
+                              <?php } ?>
 
 
                                     </ul>
@@ -119,56 +133,76 @@
             </div>
         </nav>
 
-        <div class="container-fluid">
-            <br><br><br><br>
-
-            <div class="title" id="title1">
-                <h2>Retrieve your password</h2>
-            </div>
+        <div class="container-fuild">
             <div class="row">
-                <div class="col-md-6 ">
-                    <form class="form" id="form1" method="post" action="forgotpwProcess.php">
-                        <br>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control input-lg" placeholder="example: user@gmail.com" name="email">
-                        </div>
-
-                        <label class="radio"><input type="radio" name="userType" id="userType" value="student">Student</label>
-                        <label class="radio"><input type="radio" name="userType" id="userType" value="employee">Employee</label>
-
-                        <div class="form-group">
-                            <div>
-                                <button class="btn btn-primary" name="submit" type="submit">
-             Send
-            </button>
-                                <button type="reset" class="btn btn-default">Clear</button> <br/><br/>
-                                <span><a href="login.php">Already have an account? Login Here</a></span>
+                <div class="col-md-12 col-centered formProduct1">
+                    <div class="row">
+                        <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2>
+                        <!-- just testing will going to recode -->
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <form class="form" action="productTODb.php" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="inputname">What are you selling?</label>
+                                <input type="text" class="form-control" placeholder="Enter product name/title" name="title" required>
                             </div>
-                        </div>
-                    </form>
 
+                            <div class="form-group">
+                                <label for="sel1">Whats your Product Category:</label>
+                                <select class="form-control" name="category" required>
+                                   <option value="" selected disabled>Choose of the following</option>
+                                   <option value="Mobile Phones Accessories">Mobile Phones Accessories</option>
+                                   <option value="Clothing and Accessories">Clothing and Accessories</option>
+                                   <option value="Bags and Accessories">Bags and Accessories</option>
+                                   <option value="Services">Services</option>
+                                   <option value="Collectibles">Collectibles</option>
+                                   <option value="Books & Arts">Books & Arts</option>
+                                   <option value="Hobbies, Sports">Hobbies, Sports</option>
+                                   <option value="Toys Stuffs">Toys Stuffs</option>
+                                </select>
+                            </div>
 
-                </div>
-                <div class="col-md-6">
-                    <h1> Dont have account yet?</h1>
-                    <h3> Register so you can: </h3> <br>
-                    <p> Manage your iACADAMIT account </p>
-                    <p> Sell your shit / Buy your shit </p>
-                    <p> Add products to your whishlist </p>
-                    </br>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputname">Product Price: </label>
+                        <input type="number" class="form-control" placeholder=" &#8369 1,000" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Product Description:</label>
+                        <textarea class="form-control" rows="5" name="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputname">Product Quantity:</label>
+                        <input type="number" class="form-control" name="qty" required>
+                    </div>
+                    <!--    <div class="form-group">
+                    <label for="inputname">Upload Your Product Image:</label>
+
+                </div>  need to put code to upload pictures here lol -->
+                    <div class="form-group">
+                        <label>product image</label>
+                        <input type="file" name="fileToUpload">
+                        <p class="help-block">Example "Recomended Image Size in pixel 400 X 300"</p>
+                    </div>
+
+                    <input type="hidden" name="ownerEmail" value="<?php echo $_SESSION['email']; ?>">
+
 
                     <div class="form-group">
-                        <a href="signUp.php" class="btn btn-info" role="button">Sign Up!</a>
+                        <div>
+                            <button class="btn btn-primary" name="submit" type="submit">Add Product WHohoo!</button>
+                            <button type="reset" class="btn btn-warning">Clear</button>
+                        </div>
                     </div>
                     </form>
 
-                </div>
-            </div><br/>
-            <hr/><br/>
-        </div>
 
+                    <hr>
+
+                </div>
+            </div>
+        </div>
         <!--Footer-->
         <footer class="footer1">
             <div class="container">
@@ -221,8 +255,8 @@
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Test Centres</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Announcement</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Computer Live</a></li>
 
                                 </ul>
                             </li>
@@ -286,6 +320,6 @@
 
 
 
-</body>
+    </body>
 
-</html>
+    </html>
