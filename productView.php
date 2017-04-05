@@ -169,6 +169,7 @@ if(!$_SESSION['email']){
                     <div class="row">
                         <h2> <?php echo "(".$_SESSION['email'].")"; ?> Here are your product </h2>
                         <!-- just testing will going to recode -->
+                        <?php $glasstype = $_SESSION['email'] ?>
                         <hr>
                     </div>
                     <div class="row">
@@ -178,7 +179,7 @@ if(!$_SESSION['email']){
                              $con=mysqli_connect('localhost','root','','imarketdb');
 
 
-                             $results = mysqli_query ($con,'SELECT * FROM products WHERE productCategory LIKE "Services" AND productStatus LIKE 1 LIMIT 5');
+                             $results = mysqli_query ($con,'SELECT * FROM products WHERE productStatus LIKE 1 AND owner_email LIKE "' . $glasstype . '" LIMIT 5');
 
                              while($row = mysqli_fetch_array($results)){
 
