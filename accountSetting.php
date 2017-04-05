@@ -170,7 +170,6 @@
     <div class="page-wrapper">
       <form name="personalInfo" method="post">
         <fieldset>
-          <legend>Personal Info</legend>
           <h4>Personal Info</h4><hr/>
           <div class="control-group form-group">
             <div class="controls">
@@ -201,7 +200,6 @@
                 <input type="date" class="form-control" name="birthdate" id="birthdate" required>
               </div>
             </div>
-          </div>
           <input type="submit" value="Update" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
           <input type="reset" value="Clear" class="btn">
         </fieldset>
