@@ -37,7 +37,7 @@
 			<div class="collapse navbar-collapse row" id="myNavbar">
 			<ul class="pull-right">
 				<?php if(isset($_SESSION['email'])){ ?>
-                <li class="upper-links"><a class="links" href="productAdd.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+                <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
                 <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
                 <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                 <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
@@ -45,7 +45,7 @@
                 <li class="upper-links dropdown"><a class="links">My Account</a>
                     <ul class="dropdown-menu">
                         <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
-                        <li class="profile-li"><a class="profile-links" href="accountSetting.php">Account Setting</a></li>
+                        <li class="profile-li"><a class="profile-links" href="#">Account Setting</a></li>
                         <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
                         <li class="profile-li"><a class="profile-links" href="logout.php">logout</a></li>
                 <?php }else { ?>
@@ -166,10 +166,11 @@
         </ul>
       </div>
     </div>
-
+    <div>
     <div class="page-wrapper">
       <form name="personalInfo" method="post">
         <fieldset>
+          <legend>Personal Info</legend>
           <h4>Personal Info</h4><hr/>
           <div class="control-group form-group">
             <div class="controls">
@@ -188,7 +189,6 @@
               </div>
             </div>
           </div>
-          <div class="row">
             <div class="control-group form-group col-lg-6">
               <div class="controls">
                 <label>Contact Number</label>
@@ -205,6 +205,7 @@
           <input type="submit" value="Update" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
           <input type="reset" value="Clear" class="btn">
         </fieldset>
+        </form>
         <?php
             }
           }
@@ -213,8 +214,6 @@
           if($query->num_rows > 0){
             while($row = $query->fetch_assoc()) {
         ?>
-        </form>
-
       <form name="address" method="post">
         <fieldset><br/><br/>
           <h4>Shipping Info</h4><hr/>
@@ -358,11 +357,11 @@
             <input type="submit" value="Update" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
             <input type="reset" value="Clear" class="btn">
         </fieldset>
+        </form>
         <?php
             }
           }
         ?>
-      </form>
       <form name="changePw" method="post"><br/><br/>
         <h4>Change Password</h4><hr/>
         <div class="control-group form-group">
@@ -387,9 +386,7 @@
   </div>
   <br/><hr/><br/>
   </div>
-
-
-
+</div>
 
 <!--Footer-->
     <footer class="footer1">
@@ -405,7 +402,7 @@
                             <ul>
                                 <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
                                 <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
                             </ul>
 
