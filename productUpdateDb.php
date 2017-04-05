@@ -24,7 +24,7 @@
 
   date_default_timezone_set('Asia/Manila');  // creating date_created
   $createdate =date('F j, Y g:i:a  ');
-  
+
 
 
   $stmt = $dbconn->prepare('SELECT * FROM products WHERE productName = ?');
@@ -36,11 +36,12 @@
     $stmt2->bind_param('ssdsiss', $ptitle, $pcategory, $pprice, $photo, $pqty, $createdate, $porginal);
     $stmt2->execute();
 
-    echo "<script>alert('product updated.');</script>";
-    
+    echo"<script>window.alert('Product Updated Successfully !');</script>";
+    echo"<script>location.href='productView.php';</script>";
+
   }else{
 
-    echo "<script>alert('Update Failed');</script>";
-
+    echo "<script>alert('Update Failed Please, try again !');</script>";
+    echo"<script>location.href='productView.php';</script>";
   }
 ?>
