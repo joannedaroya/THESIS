@@ -10,7 +10,7 @@ $dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
 OR die('could not connect to MariaDB'.mysqli_connect_error());
 
 if(!$_SESSION['email']){
- header("need to be login", 404);
+ header("Location: login.php", 404);
           exit;}
 ?>
 
@@ -21,7 +21,7 @@ if(!$_SESSION['email']){
     <html lang="en">
 
     <head>
-        <title>Sell your Item</title>
+        <title>Edit Product</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Latest compiled and minified CSS -->
@@ -35,7 +35,7 @@ if(!$_SESSION['email']){
 
         <link rel="stylesheet" href="css/login.css" />
         <link rel="stylesheet" href="css/design.css" />
-        <link rel="stylesheet" href="css/addPages.css" />
+        <link rel="stylesheet" href="css/productsPages.css" />
 
     </head>
 
@@ -137,19 +137,20 @@ if(!$_SESSION['email']){
             <div class="row">
                 <div class="col-md-12 col-centered formProduct1">
                     <div class="row">
-                        <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2>
+                        <h2> <?php echo "(".$_SESSION['email'].")"; ?> Edit are your product: <?php echo $_POST['PNAME'] ?> </h2>
                         <!-- just testing will going to recode -->
                         <hr>
                     </div>
                     <div class="row">
-                        <form class="form" action="productTODb.php" method="post" enctype="multipart/form-data">
+                           
+                         <form class="form" action="productUpdateDb.php" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="inputname">What are you selling?</label>
+                                <label for="inputname">Rename your Product:</label>
                                 <input type="text" class="form-control" placeholder="Enter product name/title" name="title" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="sel1">Whats your Product Category:</label>
+                                <label for="sel1">Change the Product Category:</label>
                                 <select class="form-control" name="category" required>
                                    <option value="" selected disabled>Choose of the following</option>
                                    <option value="Mobile Phones Accessories">Mobile Phones Accessories</option>
@@ -181,27 +182,32 @@ if(!$_SESSION['email']){
 
                 </div>  need to put code to upload pictures here lol -->
                     <div class="form-group">
-                        <label>product image</label>
+                        <label>Product Image</label>
                         <input type="file" name="fileToUpload">
                         <p class="help-block">Example "Recomended Image Size in pixel 400 X 300"</p>
                     </div>
+                    
+                  
 
-                    <input type="hidden" name="ownerEmail" value="<?php echo $_SESSION['email']; ?>">
-                    <input type="hidden" name="productStats" value=1>
-
+                    <input type="hidden" name="hiddenPname" value="<?php echo $_POST['PNAME'] ?>"/>
 
                     <div class="form-group">
                         <div>
-                            <button class="btn btn-primary" name="submit" type="submit">Add Product WHohoo!</button>
+                            <button class="btn btn-primary" name="submit" type="submit">Edit Product WHohoo!</button>
                             <button type="reset" class="btn btn-warning">Clear</button>
                         </div>
                     </div>
                     </form>
+                        
 
 
-                    <hr>
 
-                </div>
+
+
+
+                      
+                    </div>
+                        <hr>
             </div>
         </div>
         <!--Footer-->
