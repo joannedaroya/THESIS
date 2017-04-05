@@ -36,7 +36,7 @@
 			<div class="collapse navbar-collapse row" id="myNavbar">
 			<ul class="pull-right">
 				<?php if(isset($_SESSION['email'])){ ?>
-                <li class="upper-links"><a class="links" href="addProduct.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+                <li class="upper-links"><a class="links" href="productAdd.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
                 <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
                 <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                 <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
@@ -231,10 +231,10 @@
                 <div class="col-lg-3 col-md-3">
                     <ul class="list-unstyled clear-margins">
                         <li class="widget-container widget_nav_menu">
-                            <h1 class="title-widget">Others</h1>
+                            <h1 class="title-widget">Customer Care</h1>
                             <ul>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Customer</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Online Test Service</a></li>
+                                <li><a href="announcement.php"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
+                                <li><a href="termsnpolicy.php"><i class="fa fa-angle-double-right"></i> Terms & Policy</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Developers</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>

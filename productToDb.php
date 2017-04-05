@@ -50,17 +50,17 @@ if ($conn->connect_error) {
 
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
       echo "<script>alert('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');</script>";
-      echo"<script>location.href='addProduct.php';</script>";
+      echo"<script>location.href='productAdd.php';</script>";
       $uploadOk = 0;
   }
   // Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
 		echo "Sorry, you forgot to upload the image !";
-    echo"<script>location.href='addProduct.php';</script>";
+    echo"<script>location.href='productAdd.php';</script>";
 	// if everything is ok, try to upload file
 	} else {
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      
+
       $stmt = $conn->prepare("INSERT INTO products (productName, owner_email, price, shortDes, productCategory, productImage, QTY, date_created, productStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
       $stmt->bind_param("ssdsssisi", $ptitle, $powner, $pprice, $pdes, $pcategory, $photo, $pqty, $createdate, $pstats);
@@ -69,7 +69,7 @@ if ($conn->connect_error) {
       $stmt->close();
 
       echo"<script>window.alert('Post uploaded Successfully !');</script>";
-      echo"<script>location.href='addProduct.php';</script>";
+      echo"<script>location.href='productAdd.php';</script>";
 			} else {
           echo"<script>window.alert('Sorry, there was an error uploading your file.');</script>";
 		      echo"<script>location.href='index.php';</script>";
