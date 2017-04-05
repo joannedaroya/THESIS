@@ -1,23 +1,8 @@
 <?php
 
-// fuck sobrang hirap
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "imarketdb";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+  require_once('connector.php');
 
 
-
-// prepare and bind
 
   $porginal = $_POST['hiddenPname'];
   //$target_dir = "uploads/"; unang directory
@@ -38,30 +23,24 @@ if ($conn->connect_error) {
   $photo=$_FILES['fileToUpload']['name'];    //dont touch used to upload image property of khelly
 
   date_default_timezone_set('Asia/Manila');  // creating date_created
-  $createdate =date('F j, Y g:i:a  ');          // date_created format
+  $createdate =date('F j, Y g:i:a  ');
+  
 
 
-  $stmt = $conn->prepare("UPDATE products (productName, price, shortDes, productCategory, productImage, QTY, date_updated) VALUES (?, ?, ?, ?, ?, ?, ?) WHERE productName='$porginal'");
-  
-  
-  $stmt->bind_param("sdsssis", $ptitle, $pprice, $pdes, $pcategory, $photo, $pqty, $createdate);
+  $stmt = $dbconn->prepare('SELECT * FROM products WHERE productName = ?');
+  $stmt->bind_param('s', $porginal);
   $stmt->execute();
+  $result = $stmt->get_result();
+  if($rows = $result->fetch_assoc()){
+    $stmt2 = $dbconn->prepare('UPDATE products SET productName = ?, productCategory = ?, price = ?, productImage = ?, QTY = ?, date_update = ? WHERE productName = ?');
+    $stmt2->bind_param('ssdsiss', $ptitle, $pcategory, $pprice, $photo, $pqty, $createdate, $porginal);
+    $stmt2->execute();
 
+    echo "<script>alert('product updated.');</script>";
+    
+  }else{
 
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "";
-    }
-
-  if(@mysqli_query($conn, $query)){
-       echo "";
-  }else {
-    echo mysqli_error($conn);
-             echo " FAILED LOL";
+    echo "<script>alert('Update Failed');</script>";
 
   }
-
-
-
-$stmt->close();
-$conn->close();
 ?>

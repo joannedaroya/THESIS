@@ -138,7 +138,6 @@ if(!$_SESSION['email']){
                 <div class="col-md-12 col-centered formProduct1">
                     <div class="row">
                         <h2> <?php echo "(".$_SESSION['email'].")"; ?> Edit are your product: <?php echo $_POST['PNAME'] ?> </h2>
-                        <!-- just testing will going to recode -->
                         <hr>
                     </div>
                     <div class="row">
@@ -188,8 +187,8 @@ if(!$_SESSION['email']){
                     </div>
                     
                   
-
-                    <input type="hidden" name="hiddenPname" value="<?php echo $_POST['PNAME'] ?>"/>
+                    <?php $pname=$_POST['PNAME']?>
+                    <input type="hidden" name="hiddenPname" value="<?php echo htmlspecialchars($pname); ?>">
 
                     <div class="form-group">
                         <div>
