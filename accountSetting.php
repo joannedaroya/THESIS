@@ -166,7 +166,6 @@
         </ul>
       </div>
     </div>
-
     <div>
     <div class="page-wrapper">
       <form name="personalInfo" method="post">
@@ -215,8 +214,6 @@
           if($query->num_rows > 0){
             while($row = $query->fetch_assoc()) {
         ?>
-
-
       <form name="address" method="post">
         <fieldset><br/><br/>
           <h4>Shipping Info</h4><hr/>
@@ -365,7 +362,6 @@
             }
           }
         ?>
-
       <form name="changePw" method="post"><br/><br/>
         <h4>Change Password</h4><hr/>
         <div class="control-group form-group">
@@ -386,13 +382,11 @@
         <input type="submit" value="Update" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
         <input type="reset" value="Clear" class="btn">
       </form>
-
     </div>
   </div>
   <br/><hr/><br/>
   </div>
 </div>
-
 
 <!--Footer-->
     <footer class="footer1">
