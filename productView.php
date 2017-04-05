@@ -148,7 +148,7 @@ if(!$_SESSION['email']){
                              $con=mysqli_connect('localhost','root','','imarketdb');
 
 
-                             $results = mysqli_query ($con,'SELECT * FROM products WHERE productCategory LIKE "Services" LIMIT 5');
+                             $results = mysqli_query ($con,'SELECT * FROM products WHERE productCategory LIKE "Services" AND productStatus LIKE 1 LIMIT 5');
 
                              while($row = mysqli_fetch_array($results)){
 
@@ -168,8 +168,8 @@ if(!$_SESSION['email']){
                                  <input class="btn btn-warning" type="submit" value="Edit">
                                  </form></td><td>
 
-                                 <form class="buttons1" method="POST" action="product1.php">
-                                 <input type="hidden" name="idtest" value="'.$row['productName'].'" />
+                                 <form class="buttons1" method="POST" action="productDelete.php">
+                                 <input type="hidden" name="PNAME" value="'.$row['productName'].'" />
                                  <input class="btn btn-danger" type="submit" value="Delete">
                                  </form>
                                  
