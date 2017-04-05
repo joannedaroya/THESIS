@@ -53,7 +53,7 @@ if(!$_SESSION['email']){
       <div class="collapse navbar-collapse row" id="myNavbar">
           <ul class="pull-right">
               <?php if(isset($_SESSION['email'])){ ?>
-              <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+              <li class="upper-links"><a class="links" href="productAdd.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
               <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
               <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
               <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
@@ -142,7 +142,7 @@ if(!$_SESSION['email']){
                         <hr>
                     </div>
                     <div class="row">
-                           
+
                         <?php
 
                              $con=mysqli_connect('localhost','root','','imarketdb');
@@ -152,7 +152,7 @@ if(!$_SESSION['email']){
 
                              while($row = mysqli_fetch_array($results)){
 
-                                 echo '       
+                                 echo '
                                  <div class ="proBox1">
 
                                  <img src="productImages/' .$row['productImage']. '" width="60%" height="60%"/>
@@ -161,7 +161,7 @@ if(!$_SESSION['email']){
                                     '.$row['shortDes'].' <br />
                                   ₱ '.$row['price'].'
                                  <br>
-                                 
+
 
                                  <form class="buttons1" method="POST" action="productEdit.php">
                                  <input type="hidden" name="PNAME" value="'.$row['productName'].'" />
@@ -172,7 +172,7 @@ if(!$_SESSION['email']){
                                  <input type="hidden" name="idtest" value="'.$row['productName'].'" />
                                  <input class="btn btn-danger" type="submit" value="Delete">
                                  </form>
-                                 
+
 
                                  </div>
                                  ';
@@ -184,7 +184,7 @@ if(!$_SESSION['email']){
 
                          ?>
 
-                    
+
                     </div>
                         <hr>
             </div>
@@ -233,10 +233,10 @@ if(!$_SESSION['email']){
                     <div class="col-lg-3 col-md-3">
                         <ul class="list-unstyled clear-margins">
                             <li class="widget-container widget_nav_menu">
-                                <h1 class="title-widget">Others</h1>
+                                <h1 class="title-widget">Customer Care</h1>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Customer</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Online Test Service</a></li>
+                                    <li><a href="announcement.php"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
+                                    <li><a href="termsnpolicy.php"><i class="fa fa-angle-double-right"></i> Terms & Policy</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Developers</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
