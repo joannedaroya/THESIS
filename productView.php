@@ -10,7 +10,7 @@ $dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
 OR die('could not connect to MariaDB'.mysqli_connect_error());
 
 if(!$_SESSION['email']){
- header("need to be login", 404);
+ header("Location: login.php", 404);
           exit;}
 ?>
 
@@ -21,7 +21,7 @@ if(!$_SESSION['email']){
     <html lang="en">
 
     <head>
-        <title>Sell your Item</title>
+        <title>Product List</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Latest compiled and minified CSS -->
@@ -35,7 +35,7 @@ if(!$_SESSION['email']){
 
         <link rel="stylesheet" href="css/login.css" />
         <link rel="stylesheet" href="css/design.css" />
-        <link rel="stylesheet" href="css/addPages.css" />
+        <link rel="stylesheet" href="css/productsPages.css" />
 
     </head>
 
@@ -53,7 +53,7 @@ if(!$_SESSION['email']){
       <div class="collapse navbar-collapse row" id="myNavbar">
           <ul class="pull-right">
               <?php if(isset($_SESSION['email'])){ ?>
-              <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+              <li class="upper-links"><a class="links" href="productAdd.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
               <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
               <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
               <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
@@ -137,71 +137,56 @@ if(!$_SESSION['email']){
             <div class="row">
                 <div class="col-md-12 col-centered formProduct1">
                     <div class="row">
-                        <h2> <?php echo "(".$_SESSION['email'].")"; ?> Sell your Item </h2>
+                        <h2> <?php echo "(".$_SESSION['email'].")"; ?> Here are your product </h2>
                         <!-- just testing will going to recode -->
                         <hr>
                     </div>
                     <div class="row">
-                        <form class="form" action="productTODb.php" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="inputname">What are you selling?</label>
-                                <input type="text" class="form-control" placeholder="Enter product name/title" name="title" required>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="sel1">Whats your Product Category:</label>
-                                <select class="form-control" name="category" required>
-                                   <option value="" selected disabled>Choose of the following</option>
-                                   <option value="Mobile Phones Accessories">Mobile Phones Accessories</option>
-                                   <option value="Clothing and Accessories">Clothing and Accessories</option>
-                                   <option value="Bags and Accessories">Bags and Accessories</option>
-                                   <option value="Services">Services</option>
-                                   <option value="Collectibles">Collectibles</option>
-                                   <option value="Books & Arts">Books & Arts</option>
-                                   <option value="Hobbies, Sports">Hobbies, Sports</option>
-                                   <option value="Toys Stuffs">Toys Stuffs</option>
-                                </select>
-                            </div>
+                        <?php
+
+                             $con=mysqli_connect('localhost','root','','imarketdb');
+
+
+                             $results = mysqli_query ($con,'SELECT * FROM products WHERE productCategory LIKE "Services" AND productStatus LIKE 1 LIMIT 5');
+
+                             while($row = mysqli_fetch_array($results)){
+
+                                 echo '
+                                 <div class ="proBox1">
+
+                                 <img src="productImages/' .$row['productImage']. '" width="60%" height="60%"/>
+                                 <br>
+                                    '.$row['productName'].' <br />
+                                    '.$row['shortDes'].' <br />
+                                  ₱ '.$row['price'].'
+                                 <br>
+
+
+                                 <form class="buttons1" method="POST" action="productEdit.php">
+                                 <input type="hidden" name="PNAME" value="'.$row['productName'].'" />
+                                 <input class="btn btn-warning" type="submit" value="Edit">
+                                 </form></td><td>
+
+                                 <form class="buttons1" method="POST" action="productDelete.php">
+                                 <input type="hidden" name="PNAME" value="'.$row['productName'].'" />
+                                 <input class="btn btn-danger" type="submit" value="Delete">
+                                 </form>
+
+
+                                 </div>
+                                 ';
+
+
+                             }
+                             mysqli_close($con);
+
+
+                         ?>
+
 
                     </div>
-                    <div class="form-group">
-                        <label for="inputname">Product Price: </label>
-                        <input type="number" class="form-control" placeholder=" &#8369 1,000" name="price" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="comment">Product Description:</label>
-                        <textarea class="form-control" rows="5" name="description" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputname">Product Quantity:</label>
-                        <input type="number" class="form-control" name="qty" required>
-                    </div>
-                    <!--    <div class="form-group">
-                    <label for="inputname">Upload Your Product Image:</label>
-
-                </div>  need to put code to upload pictures here lol -->
-                    <div class="form-group">
-                        <label>product image</label>
-                        <input type="file" name="fileToUpload">
-                        <p class="help-block">Example "Recomended Image Size in pixel 400 X 300"</p>
-                    </div>
-
-                    <input type="hidden" name="ownerEmail" value="<?php echo $_SESSION['email']; ?>">
-                    <input type="hidden" name="productStats" value=1>
-
-
-                    <div class="form-group">
-                        <div>
-                            <button class="btn btn-primary" name="submit" type="submit">Add Product WHohoo!</button>
-                            <button type="reset" class="btn btn-warning">Clear</button>
-                        </div>
-                    </div>
-                    </form>
-
-
-                    <hr>
-
-                </div>
+                        <hr>
             </div>
         </div>
         <!--Footer-->
@@ -248,10 +233,10 @@ if(!$_SESSION['email']){
                     <div class="col-lg-3 col-md-3">
                         <ul class="list-unstyled clear-margins">
                             <li class="widget-container widget_nav_menu">
-                                <h1 class="title-widget">Others</h1>
+                                <h1 class="title-widget">Customer Care</h1>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Customer</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Online Test Service</a></li>
+                                    <li><a href="announcement.php"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
+                                    <li><a href="termsnpolicy.php"><i class="fa fa-angle-double-right"></i> Terms & Policy</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Developers</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>

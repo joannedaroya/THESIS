@@ -215,8 +215,8 @@
                             <li class="widget-container widget_nav_menu">
                                 <h1 class="title-widget">Others</h1>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Customer</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Online Test Service</a></li>
+                                    <li><a href="announcement.php"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
+                                    <li><a href="termsnpolicy.php"><i class="fa fa-angle-double-right"></i> Terms & Policy</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Developers</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
