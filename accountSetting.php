@@ -184,7 +184,7 @@
     </div>
     <div>
     <div class="page-wrapper">
-      <form name="personalInfo" method="post">
+      <form name="personalInfo" method="post" action="updateInfo.php">
         <fieldset>
           <h4>Personal Info</h4><hr/>
           <div class="control-group form-group">
