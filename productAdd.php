@@ -35,7 +35,7 @@ if(!$_SESSION['email']){
 
         <link rel="stylesheet" href="css/login.css" />
         <link rel="stylesheet" href="css/design.css" />
-        <link rel="stylesheet" href="css/addPages.css" />
+        <link rel="stylesheet" href="css/productsPages.css" />
 
     </head>
 
