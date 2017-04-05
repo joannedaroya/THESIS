@@ -37,7 +37,7 @@ if ($conn->connect_error) {
   setlocale(LC_MONETARY,"en_US");            //money shit dont touch
 
   $pdes = $_POST['description'];
-  $pstats = $_POST['productStats'];
+  $pstats = 1;
   $pqty = $_POST['qty'];
 
   $photo=$_FILES['fileToUpload']['name'];    //dont touch used to upload image property of khelly
