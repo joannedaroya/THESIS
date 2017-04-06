@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sign Up!</title>
+    <title>Log In</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
@@ -14,8 +14,9 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
+    <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/design.css" />
+
 </head>
 
 <body>
@@ -24,8 +25,6 @@
         session_start();
         require_once('connector.php');
     ?>
-
-
 
 
         <nav id="navbar-main">
@@ -149,92 +148,67 @@
                 </div>
             </div>
         </nav>
+
         <div class="container-fluid">
+            <br><br><br><br>
 
-
-            <br><br><br>
-
+            <div class="title" id="title1">
+                <h2>Welcome to iACADAMIT</h2>
+            </div>
             <div class="row">
-                <h2> Hi! Let's Get Started  </h2>
-                <hr>
-                <br>
-                <div class="col-md-5 col-xs-0">
-
-                    <pre>
-           Welcome to the own iACADEMY MARKET SHIT
-
-           Exclusive for iacadamit fam only k.
-
-           Why sign up?
-
-           Sell as many items for free! Absolutely no fees.
-           Chat with sellers to buy stuff you love!
-           Get social! Interact with the community and a whole lot more!
-        </pre>
-
-                </div>
-                <div class="col-md-5 col-xs-12">
-
-                    <h4> It’s free and always will be.</h4>
-                    <form method="post" action="registerProcess.php">
-                        <div class="form-group form-inline">
-                            <span class="form-group-addon"><i class="glyphicon glyphicon-user"></i></span> &nbsp&nbsp
-                            <input type="text" class="form-control" placeholder="Enter First Name" name="firstName">
-
-                            <input type="text" class="form-control" placeholder="Enter Last Name" name="lastName">
-                        </div>
+                <div class="col-md-6 ">
+                    <form class="form" id="form1" method="post" action="loginProcess.php">
+                        <br>
 
                         <div class="form-group">
-                            <label for="inputEmail">Email address</label>
-                            <input type="email" class="form-control" placeholder="Enter email" name="newemail">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control input-lg" placeholder="example: user@gmail.com" name="email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="newpassword" placeholder="New Password" required>
-                            <small id="passHelp" class="form-text text-muted">Double check your password please.</small>
+                            <label for="exampleInputEmail1">Input Password</label>
+                            <input type="password" class="form-control input-lg" placeholder="Password" name="password">
                         </div>
-
-                        <div class="form-group">
-                            <label for="bday">Contact Number </label> <br>
-                            <input type="text" name="contactNum" placeholder="Contact Number" required>
-                            <small id="contactHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bday">Date of Birth </label> <br>
-                            <input type="date" name="birthDay" required>
-                            <small id="ageHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
-                        </div>
-
-
-                        <h4>Oh! One more thing </h4>
-                        <small id="Help" class="form-text text-muted">Are you a:</small> <br>
 
                         <label class="radio"><input type="radio" name="userType" id="userType" value="student">Student</label>
                         <label class="radio"><input type="radio" name="userType" id="userType" value="employee">Employee</label>
-                        <br><br>
+                        <label class="radio"><input type="radio" name="userType" id="userType" value="admin">Admin</label>
 
                         <div class="form-group">
                             <div>
-                                <button class="btn btn-success btn-lg" name="submit" type="submit">
-      Sign Up!
-     </button>
-                                <button type="reset" class="btn btn-default btn-lg">Clear</button>
+                                <button class="btn btn-primary" name="submit" type="submit">
+             Log In!
+            </button>
+                                <button type="reset" class="btn btn-default">Clear</button> <br/><br/>
+                                <span><a href="forgotPassword.php">Forgot password?</a></span>
+
                             </div>
                         </div>
+                    </form>
 
+
+                </div>
+                <div class="col-md-6">
+                    <h1> Dont have account yet?</h1>
+                    <h3> Register so you can: </h3> <br>
+                    <p> Manage your iACADAMIT account </p>
+                    <p> Sell your shit / Buy your shit </p>
+                    <p> Add products to your whishlist </p>
+                    </br>
+
+                    <div class="form-group">
+                        <a href="signUp.php" class="btn btn-info" role="button">Sign Up!</a>
+                    </div>
                     </form>
 
                 </div>
-
+                <br/>
+                <hr/><br/>
             </div>
         </div>
 
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
 
+
+        <!--Footer-->
         <footer class="footer1">
             <div class="container">
 
@@ -245,17 +219,10 @@
 
                                 <h1 class="title-widget">About iMARKET</h1>
 
-<<<<<<< HEAD
                                 <ul>
                                     <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
                                     <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
-=======
-                            <ul>
-                                <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                                <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
->>>>>>> refs/remotes/origin/master
+                                    <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
                                 </ul>
 
@@ -293,8 +260,8 @@
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Test Centres</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Admission Form</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live Test</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Announcement</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live</a></li>
 
                                 </ul>
                             </li>
@@ -333,6 +300,8 @@
                 </div>
             </div>
         </footer>
+
+
         <!--header-->
 
         <div class="footer-bottom">
@@ -347,11 +316,14 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="design">
                             <a href="#">iMARKET </a> | <a target="_blank" href="#">Web Design & Development by iACADAMIT</a>
+                            <br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
 
 </body>
 

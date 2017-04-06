@@ -1,32 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <title>Sign Up!</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+session_start();
+DEFINE ('DB_USER', 'root');
+DEFINE ('DB_PASSWORD', '');
+DEFINE ('DB_HOST', 'localhost');
+DEFINE ('DB_NAME', 'imarketdb');
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+$dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
+OR die('could not connect to MariaDB'.mysqli_connect_error());
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-    <link rel="stylesheet" href="css/design.css" />
-</head>
-
-<body>
-
-    <?php
-        session_start();
-        require_once('connector.php');
-    ?>
+if(!$_SESSION['email']){
+ header("Location: login.php", 404);
+          exit;}
+?>
 
 
 
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>Product List</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/login.css" />
+        <link rel="stylesheet" href="css/design.css" />
+        <link rel="stylesheet" href="css/productsPages.css" />
+
+    </head>
+
+    <body>
 
         <nav id="navbar-main">
           <!--Login System Embedded by Jung Start-->
@@ -98,18 +111,18 @@
 
 
 
-  <div class="row">
-      <!--Size-->
-      <div class="col-sm-1">
-      </div>
-      <!--Size-->
-      <div class="col-sm-1">
-          <a href="index.php"><img src="image/logo.png" width="70px" height="70px"></a>
-      </div>
-      <div class="smallsearch col-sm-8 col-xs-11">
-          <div class="row">
-              <input class="navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
-              <button class="navbar-button col-xs-1">
+            <div class="row">
+                <!--Size-->
+                <div class="col-sm-1">
+                </div>
+                <!--Size-->
+                <div class="col-sm-1">
+                    <a href="index.php"><img src="image/logo.png" width="70px" height="70px"></a>
+                </div>
+                <div class="smallsearch col-sm-8 col-xs-11">
+                    <div class="row">
+                        <input class="navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
+                        <button class="navbar-button col-xs-1">
                           <svg width="15px" height="15px">
                               <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
                           </svg>
@@ -149,92 +162,65 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid">
 
-
-            <br><br><br>
-
+        <div class="container-fuild">
             <div class="row">
-                <h2> Hi! Let's Get Started  </h2>
-                <hr>
-                <br>
-                <div class="col-md-5 col-xs-0">
+                <div class="col-md-12 col-centered formProduct1">
+                    <div class="row">
+                        <h2> <?php echo "(".$_SESSION['email'].")"; ?> Here are your product </h2>
+                        <!-- just testing will going to recode -->
+                        <?php $glasstype = $_SESSION['email'] ?>
+                        <hr>
+                    </div>
+                    <div class="row">
 
-                    <pre>
-           Welcome to the own iACADEMY MARKET SHIT
+                        <?php
 
-           Exclusive for iacadamit fam only k.
-
-           Why sign up?
-
-           Sell as many items for free! Absolutely no fees.
-           Chat with sellers to buy stuff you love!
-           Get social! Interact with the community and a whole lot more!
-        </pre>
-
-                </div>
-                <div class="col-md-5 col-xs-12">
-
-                    <h4> It’s free and always will be.</h4>
-                    <form method="post" action="registerProcess.php">
-                        <div class="form-group form-inline">
-                            <span class="form-group-addon"><i class="glyphicon glyphicon-user"></i></span> &nbsp&nbsp
-                            <input type="text" class="form-control" placeholder="Enter First Name" name="firstName">
-
-                            <input type="text" class="form-control" placeholder="Enter Last Name" name="lastName">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputEmail">Email address</label>
-                            <input type="email" class="form-control" placeholder="Enter email" name="newemail">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="newpassword" placeholder="New Password" required>
-                            <small id="passHelp" class="form-text text-muted">Double check your password please.</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bday">Contact Number </label> <br>
-                            <input type="text" name="contactNum" placeholder="Contact Number" required>
-                            <small id="contactHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bday">Date of Birth </label> <br>
-                            <input type="date" name="birthDay" required>
-                            <small id="ageHelp" class="form-text text-muted">You should be in the legal age to use this service  </small>
-                        </div>
+                             $con=mysqli_connect('localhost','root','','imarketdb');
 
 
-                        <h4>Oh! One more thing </h4>
-                        <small id="Help" class="form-text text-muted">Are you a:</small> <br>
+                             $results = mysqli_query ($con,'SELECT * FROM products WHERE productStatus LIKE 1 AND owner_email LIKE "' . $glasstype . '" LIMIT 5');
 
-                        <label class="radio"><input type="radio" name="userType" id="userType" value="student">Student</label>
-                        <label class="radio"><input type="radio" name="userType" id="userType" value="employee">Employee</label>
-                        <br><br>
+                             while($row = mysqli_fetch_array($results)){
 
-                        <div class="form-group">
-                            <div>
-                                <button class="btn btn-success btn-lg" name="submit" type="submit">
-      Sign Up!
-     </button>
-                                <button type="reset" class="btn btn-default btn-lg">Clear</button>
-                            </div>
-                        </div>
+                                 echo '
+                                 <div class ="proBox1">
 
-                    </form>
+                                 <img src="productImages/' .$row['productImage']. '" width="60%" height="60%"/>
+                                 <br>
+                                    '.$row['productName'].' <br />
+                                    '.$row['shortDes'].' <br />
+                                  ₱ '.$row['price'].'
+                                 <br>
 
-                </div>
 
+                                 <form class="buttons1" method="POST" action="productEdit.php">
+                                 <input type="hidden" name="PNAME" value="'.$row['productName'].'" />
+                                 <input class="btn btn-warning" type="submit" value="Edit">
+                                 </form></td><td>
+
+                                 <form class="buttons1" method="POST" action="productDelete.php">
+                                 <input type="hidden" name="PNAME" value="'.$row['productName'].'" />
+                                 <input class="btn btn-danger" type="submit" value="Delete">
+                                 </form>
+
+
+                                 </div>
+                                 ';
+
+
+                             }
+                             mysqli_close($con);
+
+
+                         ?>
+
+
+                    </div>
+                        <hr>
             </div>
         </div>
-
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
-        <br><br><br>
-
+        <!--Footer-->
         <footer class="footer1">
             <div class="container">
 
@@ -245,17 +231,10 @@
 
                                 <h1 class="title-widget">About iMARKET</h1>
 
-<<<<<<< HEAD
                                 <ul>
                                     <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
                                     <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
-=======
-                            <ul>
-                                <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                                <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
->>>>>>> refs/remotes/origin/master
+                                    <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
                                 </ul>
 
@@ -293,8 +272,8 @@
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Test Centres</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Admission Form</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live Test</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Computer Live</a></li>
 
                                 </ul>
                             </li>
@@ -333,6 +312,8 @@
                 </div>
             </div>
         </footer>
+
+
         <!--header-->
 
         <div class="footer-bottom">
@@ -347,12 +328,15 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="design">
                             <a href="#">iMARKET </a> | <a target="_blank" href="#">Web Design & Development by iACADAMIT</a>
+                            <br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-</body>
 
-</html>
+
+    </body>
+
+    </html>
